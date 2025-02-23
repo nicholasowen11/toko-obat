@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useProductForm } from '@/hooks/useProductForm';
 import { Product, saveProduct, updateProduct } from '@/lib/storage'; // ✅ Pastikan updateProduct diimport
+import Image from 'next/image';
 
 interface ProductFormProps {
   onSubmit: (data: Omit<Product, 'id'>) => void;
@@ -10,9 +11,9 @@ interface ProductFormProps {
   isEditing?: boolean;
 }
 
-export default function ProductForm({ onSubmit, initialData, isEditing }: ProductFormProps) {
+export default function ProductForm({ initialData, isEditing }: ProductFormProps) {
   const router = useRouter();
-  const { formData, errors, handleChange, handleImageUpload, removeImage, validateForm, setErrors } =
+  const { formData, errors, handleChange, handleImageUpload, removeImage, validateForm } =
     useProductForm(initialData);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -96,14 +97,24 @@ export default function ProductForm({ onSubmit, initialData, isEditing }: Produc
               <input type="file" accept="image/*" onChange={handleImageUpload} className="w-full p-2 border border-gray-300 rounded-lg" />
               {formData.image && (
                 <div className="mt-4 flex items-center">
-                  <img src={formData.image} alt="Preview" className="w-32 h-32 object-cover rounded-lg shadow-lg" />
-                  <button
-                    type="button"
-                    onClick={removeImage}
-                    className="ml-4 bg-red-500 text-white text-xs px-3 py-2 rounded shadow hover:bg-red-600 transition-all"
-                  >
-                    Hapus
-                  </button>
+                  {formData.image && (
+                    <div className="mt-4 flex items-center">
+                      <Image
+                        src={formData.image}
+                        alt="Preview"
+                        width={128} // ✅ Sesuaikan ukuran gambar
+                        height={128}
+                        className="w-32 h-32 object-cover rounded-lg shadow-lg"
+                      />
+                      <button
+                        type="button"
+                        onClick={removeImage}
+                        className="ml-4 bg-red-500 text-white text-xs px-3 py-2 rounded shadow hover:bg-red-600 transition-all"
+                      >
+                        Hapus
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
               {errors.image && <p className="text-red-500 text-sm">{errors.image}</p>}

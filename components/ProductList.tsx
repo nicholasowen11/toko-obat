@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Product, deleteProduct, getProducts } from '@/lib/storage';
-import { useState, useEffect } from 'react';
+import { Product, deleteProduct } from '@/lib/storage';
+import Image from 'next/image';
 
 interface ProductListProps {
   products: Product[];
@@ -35,7 +35,13 @@ export default function ProductList({ products, refreshProducts }: ProductListPr
           <tr key={product.id} className="hover:bg-gray-50">
             <td className="p-2 border">
               <Link href={`/dashboard/products/${product.id}/edit`}>
-                <img src={product.image || '/placeholder.png'} alt={product.name} className="w-16 h-16 object-cover" />
+                <Image
+                  src={product.image || '/placeholder.png'} // ✅ Gambar default jika tidak ada
+                  alt={product.name}
+                  width={64} // ✅ Sesuaikan ukuran gambar
+                  height={64}
+                  className="w-16 h-16 object-cover rounded-lg"
+                />
               </Link>
             </td>
             <td className="p-2 border max-w-[200px] truncate">

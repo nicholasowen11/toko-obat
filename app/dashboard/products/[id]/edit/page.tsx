@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import ProductForm from '@/components/ProductForm';
-import { getProductById, updateProduct } from '@/lib/storage';
+import { getProductById, updateProduct, Product } from '@/lib/storage';
 import { notFound } from 'next/navigation';
 
 export default function EditProductPage() {
   const router = useRouter();
   const { id } = useParams(); // Ambil ID produk dari URL
-  const [product, setProduct] = useState<any>(null);
+  const [product, setProduct] = useState<Product | null>(null);
 
   // Ambil data produk berdasarkan ID saat halaman pertama kali dimuat
   useEffect(() => {
@@ -29,8 +29,8 @@ export default function EditProductPage() {
   }
 
   // Fungsi untuk menyimpan perubahan
-  const handleSubmit = (updatedProduct: any) => {
-    updateProduct(id as string, updatedProduct);
+  const handleSubmit = (updatedProduct: Omit<Product, 'id'>) => {
+    updateProduct(id as string, { ...product, ...updatedProduct });
     router.push('/dashboard/products'); // Kembali ke daftar produk setelah berhasil edit
   };
 

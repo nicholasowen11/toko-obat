@@ -1,10 +1,10 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import ProductList from '@/components/ProductList';
 import SearchBar from '@/components/SearchBar';
-import { getProducts, Product } from '@/lib/storage';
+import { getProducts } from '@/lib/storage';
 import ProductListSkeleton from '@/components/ProductListSkeleton';
 import { useProducts } from '@/hooks/useProducts';
 

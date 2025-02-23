@@ -1,4 +1,3 @@
-import Sidebar from '@/components/Sidebar';
 import '@/styles/global.css';
 
 interface LayoutProps {
