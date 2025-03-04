@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import { uploadImage } from "@/lib/supabase/storage"; // Pastikan ini adalah path yang benar
+import Image from "next/image";
 
 export default function ProductForm({
   productData,
@@ -178,7 +179,13 @@ export default function ProductForm({
           {previewImage && typeof previewImage === "string" && (
             <div className="mt-2">
               <p className="text-sm text-gray-500">Gambar Saat Ini:</p>
-              <img src={previewImage} alt="Preview" className="w-32 h-32 object-cover border rounded" />
+              <Image
+                src={previewImage} // URL untuk gambar yang di-preview
+                alt="Preview"
+                width={128} // Set lebar gambar sesuai kebutuhan
+                height={128} // Set tinggi gambar sesuai kebutuhan
+                className="object-cover border rounded"
+              />
             </div>
           )}
           {errors.imageUrl && <p className="text-red-500 text-sm">{errors.imageUrl.message}</p>}

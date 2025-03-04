@@ -8,6 +8,7 @@ import Link from "next/link";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter"; // Import CategoryFilter
 import { useDebounce } from "use-debounce"; // Import useDebounce
+import Image from "next/image";
 
 const ProductList = ({ adminId }: { adminId: string }) => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -82,7 +83,7 @@ const ProductList = ({ adminId }: { adminId: string }) => {
             products.map((product) => (
               <tr key={product.id} className="text-center">
                 <td className="border p-2">
-                  <img
+                  <Image
                     src={getImageSrc(product.imageUrl)}
                     alt={product.name}
                     className="w-16 h-16 object-cover mx-auto"

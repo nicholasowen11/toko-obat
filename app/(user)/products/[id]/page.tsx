@@ -9,20 +9,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useCart } from "../../context/CartContext"; // Pastikan CartContext sudah ada
 
 export default function ProductItem({ products }: { products: Product }) {
   const { addToCart } = useCart(); // Gunakan fungsi addToCart dari CartContext
+  const imageUrl = products.imageUrl || "/path/to/default-image.png";
 
   return (
     <Card className="bg-slate-200 text-mx-2">
       <CardHeader>
-        <img
+        <Image
           className="object-fill h-48 w-96"
-          src={products.imageUrl}
+          src={imageUrl}
           height={300}
           width={500}
           alt={products.name}

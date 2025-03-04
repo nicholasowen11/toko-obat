@@ -1,12 +1,12 @@
 "use client";
-import { createClient } from "@/lib/supabase/client";
+// import { createClient } from "@/lib/supabase/client";
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useCart } from "../context/CartContext";
 
 export default function Header() {
-  const supabase = createClient();
+  // const supabase = createClient();
   const [isOpen, setIsOpen] = useState(false);
   const { cart } = useCart();
 

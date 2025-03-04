@@ -7,20 +7,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
+import Image from "next/image"; // Import Image from next/image
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function ProductItem({ products }: { products: Product }) {
+  // Fallback image URL in case imageUrl is undefined
+  const imageUrl = products.imageUrl || "/path/to/default-image.png"; // Gambar default
+
   return (
     <Card className="bg-slate-200 text-mx-2">
       <CardHeader>
-        <img
+        {/* Ganti <img> dengan <Image /> */}
+        <Image
           className="object-fill h-48 w-96"
-          src={products.imageUrl}
-          height={300}
-          width={500}
-          alt={products.name}
+          src={imageUrl} // URL gambar produk atau fallback gambar
+          height={300}  // Set tinggi gambar
+          width={500}   // Set lebar gambar
+          alt={products.name}  // Deskripsi gambar
+          loading="lazy"  // Lazy load gambar
         />
       </CardHeader>
       <CardContent>
