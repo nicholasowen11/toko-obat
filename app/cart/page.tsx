@@ -1,18 +1,18 @@
 "use client";
 
-import { useCart } from "../(user)/context/CartContext";
+// import { useCart } from "../(user)/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 
 export default function CartPage() {
-  const { cart, removeFromCart, updateQuantity } = useCart();
+  // const { cart, removeFromCart, updateQuantity } = useCart();
 
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
 
-      {cart.length === 0 ? (
+      {/* {cart.length === 0 ? (
         <p className="text-lg">Your cart is empty. <Link href="/">Go shopping!</Link></p>
       ) : (
         <Table>
@@ -58,7 +58,7 @@ export default function CartPage() {
             <Button className="bg-green-500 text-white">Proceed to Checkout</Button>
           </Link>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
