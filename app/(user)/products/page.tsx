@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [role, setRole] = useState<string | null>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -15,7 +14,6 @@ export default function AdminPage() {
       if (!data.userId || data.role !== "user") {
         router.push("/auth"); // Redirect ke halaman auth jika role tidak sesuai
       } else {
-        setRole(data.role); // Set role jika autentikasi berhasil
         setIsAuthenticated(true);
       }
     };

@@ -4,12 +4,13 @@ import { useSession } from "@/hooks/useSession";
 import { addProduct } from "@/app/(adminDashboard)/actions";
 import ProductForm from "../../components/ProductForm";
 import { useRouter } from "next/navigation";
+import { Product } from "@/types";
 
 export default function AddProduct() {
   const adminId = useSession(); // Get adminId from the session
   const router = useRouter();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: Omit<Product, "id" | "createdBy">) => {
     try {
       if (adminId) {
         await addProduct(data, adminId); // Pass the adminId

@@ -61,7 +61,7 @@ export default function EditProduct() {
 
     return (
       <div>
-        <h1>Edit Produk</h1>
+        <h1 className="text-2xl font-bold mb-6">Edit Produk</h1>
         <ProductForm productData={productData} onSubmit={onSubmit} adminId={adminId} />
       </div>
     );

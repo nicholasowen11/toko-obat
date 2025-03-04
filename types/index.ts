@@ -38,3 +38,9 @@ export const orderStatus = [
   "shipped", 
   "completed"
 ]
+
+export type ErrorType = {
+  code?: string;
+  status?: number;
+  message?: string;
+};

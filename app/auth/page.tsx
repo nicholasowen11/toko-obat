@@ -21,7 +21,7 @@ export default async function Page() {
   const userId = userData.user.id;
 
   // Get the role of the user
-  let { data: user, error: userRoleError } = await supabase
+  const { data: user, error: userRoleError } = await supabase
     .from("users")
     .select("role")
     .eq("id", userId)

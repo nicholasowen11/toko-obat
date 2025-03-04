@@ -25,7 +25,7 @@ export default function ProductForm({
   const {
     register,
     handleSubmit,
-    setValue,
+    // setValue,
     formState: { errors },
   } = useForm<Product>({
     defaultValues: productData

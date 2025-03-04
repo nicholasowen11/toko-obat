@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "../actions";
+import { ErrorType } from "@/types";
 
 const FormSchema = z.object({
   email: z.string().email(),
@@ -43,7 +44,7 @@ export default function SignInForm() {
     const parsedResult =
       typeof result === "string" ? JSON.parse(result) : result;
 
-    function getErrorMessage(error: any): string {
+    function getErrorMessage(error: ErrorType): string {
       if (error.code === "invalid_credentials") {
         return "Invalid email or password.";
       }

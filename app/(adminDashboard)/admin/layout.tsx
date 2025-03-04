@@ -6,7 +6,7 @@ import Sidebar from "../components/Sidebar";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [role, setRole] = useState<string | null>(null);
+  // const [role, setRole] = useState<string | null>(null);
   const router = useRouter();
   const pathname = usePathname(); // Get the current pathname
 
@@ -19,7 +19,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         // Redirect ke halaman login jika bukan admin
         router.push("/auth");
       } else {
-        setRole(data.role); // Set role jika sudah terautentikasi
+        // setRole(data.role); // Set role jika sudah terautentikasi
         setIsAuthenticated(true);
       }
     };

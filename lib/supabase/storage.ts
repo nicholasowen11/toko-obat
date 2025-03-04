@@ -9,7 +9,7 @@ export async function uploadImage(file: File, folder: string) {
   const fileName = `${Date.now()}.${fileExt}`;
   const filePath = `${folder}/${fileName}`;
 
-  const { data, error } = await supabase.storage
+  const { error } = await supabase.storage
     .from("images") // Sesuaikan dengan nama bucket di Supabase
     .upload(filePath, file, { contentType: file.type });
 

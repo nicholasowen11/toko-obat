@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getProducts, deleteProduct } from "@/app/(adminDashboard)/actions";
 import { Product, categories } from "@/types";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter"; // Import CategoryFilter
 import { useDebounce } from "use-debounce"; // Import useDebounce
@@ -15,7 +15,7 @@ const ProductList = ({ adminId }: { adminId: string }) => {
   const [category, setCategory] = useState<string>(""); // State for selected category
   const [debouncedSearchTerm] = useDebounce(searchTerm, 500); // Delay 500ms after typing
   const [debouncedCategory] = useDebounce(category, 500); // Delay 500ms after category change
-  const router = useRouter();
+  // const router = useRouter();
 
   useEffect(() => {
     async function fetchData() {

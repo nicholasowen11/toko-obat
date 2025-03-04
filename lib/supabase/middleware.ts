@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import createSupabaseServerClient from "./server";
 
-export default async function updateSession(request: NextRequest) {
+export default async function updateSession() {
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase.auth.getUser();
 

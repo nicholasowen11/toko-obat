@@ -5,7 +5,7 @@ export async function middleware(request: NextRequest) {
     const response = NextResponse.next();
 
     if(!request.nextUrl.pathname.startsWith('/auth')) {
-        return await updateSession(request);
+        return await updateSession();
     }
 
     return response;
