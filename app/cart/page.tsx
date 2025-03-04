@@ -1,9 +1,9 @@
 "use client";
 
 // import { useCart } from "../(user)/context/CartContext";
-import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import Link from "next/link";
+// import { Button } from "@/components/ui/button";
+// import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+// import Link from "next/link";
 
 export default function CartPage() {
   // const { cart, removeFromCart, updateQuantity } = useCart();

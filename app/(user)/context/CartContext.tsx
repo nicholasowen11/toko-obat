@@ -10,7 +10,7 @@ interface CartContextType {
   updateQuantity: (id: string, quantity: number) => void;
 }
 
-const CartContext = createContext<CartContextType | null>(null);
+// const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = () => {
   // const [cart, setCart] = useState<CartItem[]>([]);

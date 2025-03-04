@@ -16,7 +16,7 @@ import { Product } from "@/types";
 
 export default function ProductItem({ products }: { products: Product }) {
   // const { addToCart } = useCart(); // Gunakan fungsi addToCart dari CartContext
-  const imageUrl = products.imageUrl || "/path/to/default-image.png";
+  // const imageUrl = products.imageUrl || "/path/to/default-image.png";
 
   return (
     <div></div>
