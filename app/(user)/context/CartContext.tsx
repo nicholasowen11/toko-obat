@@ -13,38 +13,41 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | null>(null);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  // const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (product: Product) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((item) => item.productId === product.id);
-      if (existingItem) {
-        return prevCart.map((item) =>
-          item.productId === product.id
-            ? { ...item, quantity: Math.min(item.quantity + 1, item.stock) }
-            : item
-        );
-      }
-      return [...prevCart, { productId: product.id, name: product.name, price: product.price, quantity: 1, stock: product.stock, imageUrl: product.imageUrl }];
-    });
-  };
+  // const addToCart = (product: Product) => {
+  //   setCart((prevCart) => {
+  //     const existingItem = prevCart.find((item) => item.productId === product.id);
+  //     if (existingItem) {
+  //       return prevCart.map((item) =>
+  //         item.productId === product.id
+  //           ? { ...item, quantity: Math.min(item.quantity + 1, item.stock) }
+  //           : item
+  //       );
+  //     }
+  //     return [...prevCart, { productId: product.id, name: product.name, price: product.price, quantity: 1, stock: product.stock, imageUrl: product.imageUrl }];
+  //   });
+  // };
 
-  const removeFromCart = (id: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.productId !== id));
-  };
+  // const removeFromCart = (id: string) => {
+  //   setCart((prevCart) => prevCart.filter((item) => item.productId !== id));
+  // };
 
-  const updateQuantity = (id: string, quantity: number) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.productId === id ? { ...item, quantity: Math.min(quantity, item.stock) } : item
-      )
-    );
-  };
+  // const updateQuantity = (id: string, quantity: number) => {
+  //   setCart((prevCart) =>
+  //     prevCart.map((item) =>
+  //       item.productId === id ? { ...item, quantity: Math.min(quantity, item.stock) } : item
+  //     )
+  //   );
+  // };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity }}>
-      {children}
-    </CartContext.Provider>
+    // <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity }}>
+    //   {children}
+    // </CartContext.Provider>
+    <div>
+      
+    </div>
   );
 };
 

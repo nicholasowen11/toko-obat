@@ -15,7 +15,7 @@ export default function ProductItem({ products }: { products: Product }) {
   return (
     <Card className="bg-slate-200 text-mx-2">
       <CardHeader>
-        <Image
+        <img
           className="object-fill h-48 w-96"
           src={products.imageUrl}
           height={300}
