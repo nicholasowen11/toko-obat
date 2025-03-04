@@ -1,14 +1,14 @@
 "use client";
 
-import { createContext } from "react";
+// import { createContext } from "react";
 import { CartItem, Product } from "@/types";
 
-interface CartContextType {
-  cart: CartItem[];
-  addToCart: (product: Product) => void;
-  removeFromCart: (id: string) => void;
-  updateQuantity: (id: string, quantity: number) => void;
-}
+// interface CartContextType {
+//   cart: CartItem[];
+//   addToCart: (product: Product) => void;
+//   removeFromCart: (id: string) => void;
+//   updateQuantity: (id: string, quantity: number) => void;
+// }
 
 // const CartContext = createContext<CartContextType | null>(null);
 
