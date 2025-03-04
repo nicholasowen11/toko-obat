@@ -87,7 +87,7 @@ const ProductList = ({ adminId }: { adminId: string }) => {
                     src={getImageSrc(product.imageUrl)}
                     alt={product.name}
                     className="w-16 h-16 object-cover mx-auto"
-                    loading="lazy" // Lazy load images
+                    // loading="lazy" // Lazy load images
                   />
                 </td>
                 <td className="border p-2">{product.name}</td>
