@@ -1,14 +1,17 @@
+// import { CartProvider } from "./(user)/context/CartContext";
 import '@/styles/global.css';
 
-interface LayoutProps {
+export default function RootLayout({
+  children,
+}: Readonly<{
   children: React.ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+}>) {
   return (
-    <html lang="id">
-      <body className="flex min-h-screen">
-        {children}
+    <html lang="en">
+      <body>
+        {/* <CartProvider> */}
+          {children}
+        {/* </CartProvider> */}
       </body>
     </html>
   );
